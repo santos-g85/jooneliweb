@@ -5,11 +5,7 @@ namespace jooneliweb.Controllers
 {
     public class BusinessController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+       
         public IActionResult Details(string id)
         {
             var business = GetBusinessById(id);

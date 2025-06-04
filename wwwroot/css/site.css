@@ -24,9 +24,9 @@ body {
     transition: color 0.3s ease;
 }
 
-.offcanvas-body.navbar-nav .nav-link:hover {
+/*.offcanvas-body.navbar-nav .nav-link:hover {
     color: red !important;
-}
+}*/
 
 .navbar-nav .nav-link {
     transition: color 0.3s ease;
@@ -54,7 +54,6 @@ body {
     background-position: center center; /* Centers the image */
     /* Makes sure the section takes up the entire screen height */
     height:100vh;
-    background:black;
 }
 .custom-nav {
     z-index: 2;
@@ -77,17 +76,17 @@ body {
     position: relative;
 }*/
 
-.dropdown-hover-content {
+/*.dropdown-hover-content {
     width: 100%;
     left: 0;
     right: 0;
-    max-width: 1140px; /* or match container width */
-    margin: 0 auto;
+    max-width: 1140px;*/ /* or match container width */
+    /*margin: 0 auto;
     display:none;
     position:absolute;
     background-color:blue;
     z-index:1080;
-}
+}*/
 
 
 .navbar {
@@ -99,3 +98,20 @@ body {
 }
 
 
+.custom-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}

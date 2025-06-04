@@ -18,7 +18,27 @@ namespace jooneliweb.Controllers
             
             return View();
         }
+        
+        public IActionResult About()
+        {
 
+            return View("About/Index");
+        }
+        public IActionResult Business()
+        {
+
+            return View("Business/Index");
+        }
+        public IActionResult Career()
+        {
+
+            return View("Career/Index");
+        }
+        public IActionResult Contact()
+        {
+
+            return View("Contact/Index");
+        }
         public IActionResult Privacy()
         {
             return View();

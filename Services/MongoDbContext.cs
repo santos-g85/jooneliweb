@@ -44,16 +44,23 @@ namespace jooneliweb.Services
             }
         }
 
+        public IMongoCollection<T> GetCollection<T>(string name)
+        {
+            return _database.GetCollection<T>(name);
+        }
         public GridFSBucket GridFsBucket => _gridbucket;
         //define collections for each model
-        public IMongoCollection<CVUploadModel> CVUploadCollection =>
-            _database.GetCollection<CVUploadModel>("CVUploads");
+        //cvupload collection
+        //public IMongoCollection<CVUploadModel> CVUploadCollection =>
+        //    _database.GetCollection<CVUploadModel>("CVUploads");
 
-        public IMongoCollection<ContactModel> ContactCollection =>
-            _database.GetCollection<ContactModel>("Messages");
-
-        public IMongoCollection<NewsModel> NewsCollection =>
-            _database.GetCollection<NewsModel>("NewsCollection");
+        ////messages collection
+        //public IMongoCollection<ContactModel> ContactCollection =>
+        //    _database.GetCollection<ContactModel>("Messages");
+        
+        ////news collection
+        //public IMongoCollection<NewsModel> NewsCollection =>
+        //    _database.GetCollection<NewsModel>("NewsCollection");
 
     }
 }

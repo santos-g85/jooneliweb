@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace jooneliweb.Models
 {
-    public class NewsModel
+    public class NewsModel 
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -20,8 +20,8 @@ namespace jooneliweb.Models
         [BsonElement("Category")]
         public string Category { get; set; }
 
-        [BsonElement("ImageUrl")]
-        public string ImageUrl { get; set; }
+        [BsonElement("Image")]
+        public BsonBinaryData Image { get; set; }
 
         [BsonElement("Featured")]
         public bool IsFeatured { get; set; } = false;

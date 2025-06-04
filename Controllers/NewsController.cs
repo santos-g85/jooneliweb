@@ -1,9 +1,11 @@
 ﻿using jooneliweb.Models;
-using jooneliweb.Services;
+using jooneliweb.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using MongoDB.Driver.GridFS;
+using System.Drawing;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace jooneliweb.Controllers
 {
@@ -11,21 +13,21 @@ namespace jooneliweb.Controllers
     {
 
         private readonly ILogger<NewsController> _logger;
-        private readonly IMongoCollection<NewsModel> _newsCollection;
+        //private readonly IMongoCollection<NewsModel> _newsCollection;
         //private readonly GridFSBucket _gridBucket;
-       
-        public NewsController(ILogger<NewsController> logger, MongoDbContext mongoDbContext)
+       private readonly IMongoRepository<NewsModel> _newsCollection;
+        public NewsController(ILogger<NewsController> logger, IMongoRepository<NewsModel> NewsCollection)
         {
             _logger = logger;
-            _newsCollection = mongoDbContext.NewsCollection;
+            _newsCollection = NewsCollection;
            // _gridBucket = gridBucket;
         }
 
-        // GET: NewsController
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+        //GET: NewsController
+        public ActionResult Index()
+        {
+            return View("~/Views/Admin/News/Index.cshtml");
+        }
 
         // GET: NewsController/Details/5
         public ActionResult Details(int id)
@@ -34,25 +36,56 @@ namespace jooneliweb.Controllers
         }
 
         // GET: NewsController/Create
+        [HttpGet]
         public ActionResult Create()
         {
+            return View("~/Views/Admin/News/Create.cshtml");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(IFormFile ImageFile)
+        {
+            if (ModelState.IsValid)
+            {
+                var news = new NewsModel
+                {
+                    Title = Request.Form["Title"],
+                    Content = Request.Form["Content"],
+                    Category = Request.Form["Category"],
+                    CreatedAt = DateTime.UtcNow
+                };
+                
+                if (ImageFile != null && ImageFile.Length > 0)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await ImageFile.CopyToAsync(memoryStream);
+                        news.Image = memoryStream.ToArray(); 
+                    }
+                }
+
+                try
+                {
+                   
+                    await _newsCollection.CreateAsync(news);
+                    _logger.LogInformation("News item created successfully: {Title}", news.Title);
+                    Console.WriteLine("succesfully cread news article");
+                }
+                catch (Exception ex)
+                {
+                    // Log the error and return the same view with error message
+                    _logger.LogError(ex, "Error while creating news item: {Title}", news.Title);
+                    ModelState.AddModelError("", "An error occurred while creating the news item. Please try again.");
+                    Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    return RedirectToAction("Create");
+                }
+            }
+
+            // If model is invalid, return the same view with validation errors
             return View();
         }
 
-        // POST: NewsController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
         // GET: NewsController/Edit/5
         public ActionResult Edit(int id)

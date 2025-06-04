@@ -1,0 +1,167 @@
+﻿@model jooneliweb.Models.CVUploadModel
+<!-- Quick Connect Section -->
+<div class="container">
+    <h2 class="text-center fw-bold mb-4" style="font-size: 2.5rem; color:rgb(230,0,0)">Carrer Opportunities at Jooneli</h2>
+    <p class="text-center mb-4" style="font-size: 1.1rem;">
+        Your Chance to Be a Part of Something Bigger
+    </p>
+
+    <div class="cpy-7 mt-md-5 mt-0">
+        <div class="row  align-items-center gx-5">
+            <!-- Text Content -->
+            <div class="col-md-6 order-2 order-md-1">
+                <h1 class="fw-bold text-danger mb-4 display-4">
+                    Join Our Team.<br class="d-none d-md-block" />
+                    <span class="text-dark">Your chance to be a part of Something Bigger.</span>
+                </h1>
+                <p class="mb-4 lead">
+                    Jooneli Inc is a rapidly growing company led by Professionals. At Jooneli, you will find diverse and challenging roles across various functions that push your boundaries and help you reach your full potential. A career here immerses you in a culture of excellence and growth, empowering you to enhance your skills and advance your career to new heights.
+                </p>
+                <div class="d-flex flex-wrap gap-3 mb-4">
+                    <button class="btn btn-danger px-5 py-3 fs-5" data-bs-toggle="modal" data-bs-target="#CVUploadModal">Drop Your CV</button>
+                    @* <a href="#" class="btn btn-outline-danger px-5 py-3 fs-5">Learn More</a> *@
+                </div>
+            </div>
+            
+            <!-- Image Section -->
+            <div class="col-md-6 text-center pe-md-3 mt-4 mt-md-0 order-1 order-md-2 d-none d-md-block">
+                <img src="~/images/career.jpg"
+                     class="img-fluid"
+                     style="max-width: 100%; height: auto; max-height: 500px; transform: rotate(10deg); "
+                     alt="Remote Access Devices" />
+
+            </div>
+        </div>
+    </div>
+
+    @* <h2 class="d-flex justify-content-center">Current Openings</h2> *@
+    @* <hr /> *@
+
+    <h2 class="text-center mt-5 fw-bold">Current Openings</h2>
+    <hr class="mx-auto" style="width: 80px; border-top: 3px solid #dc3545;" />
+
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+
+        <!-- Opening 1 -->
+        <a asp-controller="Business" asp-action="Multidesk" class="text-decoration-none text-dark">
+            <div class="card shadow rounded border-0" style="max-width:300px;">
+                <div class="card-body">
+                    <h5 class="card-title text-danger mb-2">
+                        <i class="bi bi-bank me-2"></i> 360 Core Banking System
+                    </h5>
+                    <p class="text-muted mb-2" style="font-size: 0.9rem;">Department: Development · Location: Kathmandu</p>
+                    <div class="bg-light p-4 rounded text-center my-3">
+                        <img src="/images/joonlogo--JfLTwqW.png" style="height:64px; width:64px;" alt="Alternate Text" />
+                    </div>
+                    <p class="mb-2">Work on mission-critical banking infrastructure with a dedicated and innovative team.</p>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <span class="badge bg-danger text-white">Remote</span>
+                        </div>
+                        <div>
+                            <span class="badge bg-danger text-white">Full Time</span>
+                        </div>
+                        <div>
+                            <span class="btn  btn-sm btn-outline-danger">Apply Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Opening 2 -->
+        <a asp-controller="Business" asp-action="Multidesk" class="text-decoration-none text-dark">
+            <div class="card shadow rounded border-0" style="max-width:300px">
+                <div class="card-body">
+                    <h5 class="card-title text-danger mb-2">
+                        <i class="bi bi-bank me-2"></i>Trading System
+                    </h5>
+                    <p class="text-muted mb-2" style="font-size: 0.9rem;">Department: Development · Location: Kathmandu</p>
+                    <div class="bg-light p-4 rounded text-center my-3">
+                        <img src="/images/joonlogo--JfLTwqW.png" style="height:64px; width:64px;" alt="Alternate Text" />
+                    </div>
+                    <p class="mb-2">Work on mission-critical banking infrastructure with a dedicated and innovative team.</p>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <span class="badge bg-danger text-white">Remote</span>
+                        </div>
+                        <div>
+                            <span class="badge bg-danger text-white">Full Time</span>
+                        </div>
+                        <div>
+                            <span class="btn  btn-sm btn-outline-danger">Apply Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Opening 3 -->
+        <a asp-controller="Business" asp-action="Multidesk" class="text-decoration-none text-dark">
+            <div class="card shadow rounded border-0" style="max-width:300px">
+                <div class="card-body">
+                    <h5 class="card-title text-danger mb-2">
+                        <i class="bi bi-laptop me-2"></i> MultipleDesk Support Specialist
+                    </h5>
+                    <p class="text-muted mb-2" style="font-size: 0.9rem;">Department: Support · Location: Lalitpur</p>
+                    <div class="bg-light p-4 rounded text-center my-3">
+                        <img src="/images/joonlogo--JfLTwqW.png" style="height:64px; width:64px;" alt="Alternate Text" />
+                    </div>
+                    <p class="mb-2">Provide exceptional technical assistance and remote desktop support to enterprise clients.</p>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <span class="badge bg-danger text-white">Remote</span>
+                        </div>
+                        <div>
+                            <span class="badge bg-danger text-white">Full Time</span>
+                        </div>
+                        <div>
+                            <span class="btn  btn-sm btn-outline-danger">Apply Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+
+<!-- Registration Modal -->
+<div class="modal fade" id="CVUploadModal" tabindex="-1" aria-labelledby="CVUploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+                <form asp-controller="Career" asp-action="CVUploads" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Drop Your CV</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-2">
+                        <label>Full Name</label>
+                        <input asp-for="Name" class="form-control" required />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="mb-2">
+                        <label>Contact Number</label>
+                        <input asp-for="ContactNumber" class="form-control" required />
+                        <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                    </div>
+                    <div class="mb-2">
+                        <label>Email</label>
+                        <input asp-for="Email" type="email" class="form-control" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <label>Upload Your CV</label>
+                    <div class="input-group">
+                        <input type="file" name="cvfile" class="form-control" placeholder="Upload your CV" aria-label="File Upload" aria-describedby="basic-addon2">
+                        <span asp-validation-for="CVFileId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger w-25" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
