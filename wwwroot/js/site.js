@@ -65,36 +65,36 @@
 
 // Write your JavaScript code.
 
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdownTrigger = document.querySelector('.nav-item.position-static');
-    const megaDropdown = document.querySelector('.mega-dropdown');
+//document.addEventListener('DOMContentLoaded', function () {
+//    const dropdownTrigger = document.querySelector('.nav-item.position-static');
+//    const megaDropdown = document.querySelector('.mega-dropdown');
 
-    if (dropdownTrigger && megaDropdown) {
-        let timeout;
+//    if (dropdownTrigger && megaDropdown) {
+//        let timeout;
 
-        dropdownTrigger.addEventListener('mouseenter', () => {
-            clearTimeout(timeout);
-            megaDropdown.style.display = 'block';
-        });
+//        dropdownTrigger.addEventListener('mouseenter', () => {
+//            clearTimeout(timeout);
+//            megaDropdown.style.display = 'block';
+//        });
 
-        dropdownTrigger.addEventListener('mouseleave', () => {
-            timeout = setTimeout(() => {
-                megaDropdown.style.display = 'none';
-            }, 200); // Delay to allow mouse to reach dropdown
-        });
+//        dropdownTrigger.addEventListener('mouseleave', () => {
+//            timeout = setTimeout(() => {
+//                megaDropdown.style.display = 'none';
+//            }, 200); // Delay to allow mouse to reach dropdown
+//        });
 
-        megaDropdown.addEventListener('mouseenter', () => {
-            clearTimeout(timeout);
-            megaDropdown.style.display = 'block';
-        });
+//        megaDropdown.addEventListener('mouseenter', () => {
+//            clearTimeout(timeout);
+//            megaDropdown.style.display = 'block';
+//        });
 
-        megaDropdown.addEventListener('mouseleave', () => {
-            timeout = setTimeout(() => {
-                megaDropdown.style.display = 'none';
-            }, 200);
-        });
-    }
-});
+//        megaDropdown.addEventListener('mouseleave', () => {
+//            timeout = setTimeout(() => {
+//                megaDropdown.style.display = 'none';
+//            }, 200);
+//        });
+//    }
+//});
 
 
 //document.addEventListener('DOMContentLoaded', function () {
@@ -226,6 +226,160 @@ document.addEventListener('DOMContentLoaded', function () {
 //});
 
 
+//document.addEventListener('DOMContentLoaded', function () {
+//    const dropdownTrigger = document.querySelector('.nav-item.position-static');
+//    const megaDropdown = document.querySelector('.mega-dropdown');
+//    const navItems = document.querySelectorAll('.navbar-collapse .navbar-nav .my-list .nav-link');
+//    const header = document.querySelector('.custom-header');
+//    const button = document.querySelector('.custom-header .touch-custom');
+
+//    let isHoveringNavLink = false;
+//    let timeout;
+
+//    if (dropdownTrigger && megaDropdown) {
+//        dropdownTrigger.addEventListener('mouseenter', () => {
+//            clearTimeout(timeout);
+//            megaDropdown.style.display = 'block';
+//        });
+
+//        dropdownTrigger.addEventListener('mouseleave', () => {
+//            timeout = setTimeout(() => {
+//                megaDropdown.style.display = 'none';
+//            }, 500);
+//        });
+
+//        megaDropdown.addEventListener('mouseenter', () => {
+//            clearTimeout(timeout);
+//            megaDropdown.style.display = 'block';
+//        });
+
+//        megaDropdown.addEventListener('mouseleave', () => {
+//            timeout = setTimeout(() => {
+//                megaDropdown.style.display = 'none';
+//                resetStyles();
+//            }, 500);
+//        });
+//    }
+
+//    navItems.forEach(link => {
+//        link.addEventListener('mouseenter', function () {
+//            isHoveringNavLink = true;
+//            header.style.backgroundColor = 'white';
+
+//            // Set all nav link colors to black
+//            navItems.forEach(item => {
+//                item.style.color = 'black';
+//            });
+
+//            button.classList.remove('btn-outline-light');
+//            button.classList.add('btn-outline-danger');
+//        });
+
+//        link.addEventListener('mouseleave', function () {
+//            isHoveringNavLink = false;
+//            setTimeout(() => {
+//                if (!megaDropdown?.matches(':hover') && !isHoveringNavLink) {
+//                    resetStyles();
+//                }
+//            }, 500);
+//        });
+//    });
+
+//    function resetStyles() {
+//        header.style.backgroundColor = '';
+//        button.classList.remove('btn-outline-danger');
+//        button.classList.add('btn-outline-light');
+
+//        // Reset all nav link colors
+//        navItems.forEach(link => {
+//            link.style.color = '';
+//        });
+//    }
+//});
+
+
+
+
+//document.addEventListener('DOMContentLoaded', function () {
+//    const dropdownTrigger = document.querySelector('.nav-item.position-static');
+//    const megaDropdown = document.querySelector('.mega-dropdown');
+//    const navItems = document.querySelectorAll('.navbar-collapse .navbar-nav .my-list .nav-link');
+//    const header = document.querySelector('.custom-header');
+//    const button = document.querySelector('.custom-header .touch-custom');
+
+//    let isHoveringNavLink = false;
+//    let timeout;
+
+//    // Dropdown Hover Behavior
+//    if (dropdownTrigger && megaDropdown) {
+//        dropdownTrigger.addEventListener('mouseenter', () => {
+//            clearTimeout(timeout);
+//            megaDropdown.style.display = 'block';
+//        });
+
+//        dropdownTrigger.addEventListener('mouseleave', () => {
+//            timeout = setTimeout(() => {
+//                megaDropdown.style.display = 'none';
+//            }, 500);
+//        });
+
+//        megaDropdown.addEventListener('mouseenter', () => {
+//            clearTimeout(timeout);
+//            megaDropdown.style.display = 'block';
+//        });
+
+//        megaDropdown.addEventListener('mouseleave', () => {
+//            timeout = setTimeout(() => {
+//                megaDropdown.style.display = 'none';
+//                resetStyles();
+//            }, 500);
+//        });
+//    }
+
+//    // Nav Hover Effects
+//    navItems.forEach(link => {
+//        link.addEventListener('mouseenter', function () {
+//            isHoveringNavLink = true;
+
+//            // Trigger background "fall" animation
+//            header.classList.add('animate-bg');
+
+//            // Change all nav link colors to black
+//            navItems.forEach(item => {
+//                item.style.color = 'black';
+//            });
+
+//            // Change button style
+//            button.classList.remove('btn-outline-light');
+//            button.classList.add('btn-outline-danger');
+//        });
+
+//        link.addEventListener('mouseleave', function () {
+//            isHoveringNavLink = false;
+
+//            setTimeout(() => {
+//                if (!megaDropdown?.matches(':hover') && !isHoveringNavLink) {
+//                    resetStyles();
+//                }
+//            }, 500);
+//        });
+//    });
+
+//    // Reset everything
+//    function resetStyles() {
+//        header.classList.remove('animate-bg');
+
+//        // Restore nav link colors
+//        navItems.forEach(link => {
+//            link.style.color = '';
+//        });
+
+//        // Restore button style
+//        button.classList.remove('btn-outline-danger');
+//        button.classList.add('btn-outline-light');
+//    }
+//});
+
 document.addEventListener('DOMContentLoaded', function () {
     const dropdownTrigger = document.querySelector('.nav-item.position-static');
     const megaDropdown = document.querySelector('.mega-dropdown');
@@ -239,23 +393,23 @@ document.addEventListener('DOMContentLoaded', function () {
     if (dropdownTrigger && megaDropdown) {
         dropdownTrigger.addEventListener('mouseenter', () => {
             clearTimeout(timeout);
-            megaDropdown.style.display = 'block';
+            megaDropdown.classList.add('show');
         });
 
         dropdownTrigger.addEventListener('mouseleave', () => {
             timeout = setTimeout(() => {
-                megaDropdown.style.display = 'none';
+                megaDropdown.classList.remove('show');
             }, 500);
         });
 
         megaDropdown.addEventListener('mouseenter', () => {
             clearTimeout(timeout);
-            megaDropdown.style.display = 'block';
+            megaDropdown.classList.add('show');
         });
 
         megaDropdown.addEventListener('mouseleave', () => {
             timeout = setTimeout(() => {
-                megaDropdown.style.display = 'none';
+                megaDropdown.classList.remove('show');
                 resetStyles();
             }, 500);
         });
@@ -264,9 +418,9 @@ document.addEventListener('DOMContentLoaded', function () {
     navItems.forEach(link => {
         link.addEventListener('mouseenter', function () {
             isHoveringNavLink = true;
-            header.style.backgroundColor = 'white';
 
-            // Set all nav link colors to black
+            header.classList.add('animate-bg');
+
             navItems.forEach(item => {
                 item.style.color = 'black';
             });
@@ -277,6 +431,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         link.addEventListener('mouseleave', function () {
             isHoveringNavLink = false;
+
             setTimeout(() => {
                 if (!megaDropdown?.matches(':hover') && !isHoveringNavLink) {
                     resetStyles();
@@ -286,13 +441,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function resetStyles() {
-        header.style.backgroundColor = '';
-        button.classList.remove('btn-outline-danger');
-        button.classList.add('btn-outline-light');
-
-        // Reset all nav link colors
+        header.classList.remove('animate-bg');
         navItems.forEach(link => {
             link.style.color = '';
         });
+
+        button.classList.remove('btn-outline-danger');
+        button.classList.add('btn-outline-light');
     }
 });
