@@ -70,10 +70,25 @@ header.navbar {
     transition: 1s ease;
 }
 
-    .nav-item.position-static:hover .mega-dropdown,
-    .mega-dropdown:hover {
+ .nav-item.position-static:hover .mega-dropdown,
+ .mega-dropdown:hover {
         display: block;
-    }
+ }
+
+ /* kjsfkkl*/
+.custom-header {
+    transition: background-color 0.3s ease;
+}
+
+.navbar-collapse .navbar-nav .my-list .nav-link {
+    transition: color 0.2s ease;
+}
+
+.touch-custom {
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+/*djkflka*/
+
 
 /* Change the text color of .nav-link when hovering over .my-list */
 .my-list .nav-link {
