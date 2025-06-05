@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const navItem = document.querySelectorAll('.navbar-collapse .navbar-nav .my-list .nav-link');
     const containerFluid = document.querySelector('.custom-header');
-
+    const customtouch = document.querySelector('.custom-header .touch-custom')
     // Ensure the container has a smooth transition for background color
     containerFluid.style.transition = 'background-color 0.3s ease'; // Smooth transition for background color
 
@@ -116,7 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
             isHoveringNavLink = true;
             containerFluid.style.backgroundColor = 'white'; // Change to white on hover
             link.style.color = 'black';
-
+            customtouch.classList.remove('btn-outline-light');
+            customtouch.classList.add('btn-outline-danger');
         });
 
         link.addEventListener('mouseleave', function () {
@@ -126,6 +127,8 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 if (!document.querySelector('.mega-dropdown:hover') && !isHoveringNavLink) {
                     containerFluid.style.backgroundColor = ''; // Reset to original color smoothly
+                    customtouch.classList.remove('btn-outline-danger');
+                    customtouch.classList.add('btn-outline-light');
                     navItem.forEach(link => {
                         link.style.color = ''; // Reset text color smoothly
                     });
@@ -146,6 +149,8 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 if (!isHoveringNavLink) {
                     containerFluid.style.backgroundColor = ''; // Reset to original color smoothly
+                    customtouch.classList.remove('btn-outline-danger');
+                    customtouch.classList.add('btn-outline-light');
                     navItem.forEach(link => {
                         link.style.color = ''; // Reset text color smoothly
                     });
