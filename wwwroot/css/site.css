@@ -1,104 +1,29 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 0px;
-}
-.offcanvas-body .navbar-nav .nav-link {
-    transition: color 0.3s ease;
+    min-height: 100%;
+    margin: 0
 }
 
-/*.offcanvas-body.navbar-nav .nav-link:hover {
-    color: red !important;
-}*/
-
-.navbar-nav .nav-link {
-    transition: color 0.3s ease;
-}
-
-/*.navbar-nav .nav-link:hover {
-        color: red !important;
-}
-*/
-/* Default: Margin for larger screens */
-.logo-margin {
-    margin-left: 120px; 
-}
-
-/* For mobile devices */
-@media (max-width: 767px) {
-    .logo-margin {
-        margin-left: 0px; 
-    }
-}
-/* Hero Section Styles */
-.hero-section {
-    /*background-image: url('/images/7990322.jpg');*/ /* Your image path */
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center center; /* Centers the image */
-    /* Makes sure the section takes up the entire screen height */
-    height:100vh;
-}
-.custom-nav {
-    z-index: 2;
-}
-.hero-section .nav-index {
-    z-index:2;
-}
-/* Optional: Adjust the text styles for better visibility on the background */
-/*.hero-section h1, .hero-section p {
-        z-index: 1;*/ /* Ensures text is above the background */
-/*}*/
-/* Ensure padding doesn't overlap on mobile */
-@media (max-width: 767px) {
-    .hero-section {
-        padding-bottom: 4rem;
-    }
-}
-/*
-.group-hover {
-    position: relative;
-}*/
-
-/*.dropdown-hover-content {
-    width: 100%;
-    left: 0;
-    right: 0;
-    max-width: 1140px;*/ /* or match container width */
-    /*margin: 0 auto;
-    display:none;
-    position:absolute;
-    background-color:blue;
-    z-index:1080;
-}*/
-
-
-.navbar {
-    position: relative; /* Ensure positioning context for dropdown */
-}
-
-.group-hover:hover .dropdown-hover-content {
-    display: block;
-}
-
-
-.custom-header {
+/*for videos*/
+.vido-header {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -110,8 +35,92 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -3;
+    padding: 0;
+    margin: 0;
+}
+
+header.navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.logo {
+    margin-left: 5px; /* Default margin for mobile */
+}
+
+.navbar-toggler {
+    margin-right: 5px;
+}
+
+.mega-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 2rem 1rem;
+    display: none;
+    z-index: 1050;
+    transition: 1s ease;
+}
+
+    .nav-item.position-static:hover .mega-dropdown,
+    .mega-dropdown:hover {
+        display: block;
+    }
+
+/* Change the text color of .nav-link when hovering over .my-list */
+.my-list .nav-link {
+    color: white; /* Default text color */
+}
+
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 376px) {
+}
+
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .logo {
+        margin-left: 8px;
+    }
+
+    .navbar-toggler {
+        margin-right: 8px;
+    }
+}
+/*
+Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .logo {
+        margin-left: 10px; /* Slightly larger margin */
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .logo {
+        margin-left: 110px;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .logo {
+        margin-left: 120px;
+    }
+}
+
+/*XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+    .logo {
+        margin-left: 120px;
+    }
 }

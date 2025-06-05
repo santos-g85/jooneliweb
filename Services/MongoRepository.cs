@@ -42,5 +42,13 @@ namespace jooneliweb.Services
             var filter = Builders<T>.Filter.Eq("_id", ObjectId.Parse(id));
             await _collection.DeleteOneAsync(filter);
         }
+
+        public async Task<List<T>> GetAllSortedByDateAsync()
+        {
+            var sort = Builders<T>.Sort.Descending("CreatedAt");
+            return await _collection.Find(_ => true)
+                .Sort(sort)
+                .ToListAsync();
+        }
     }
 }

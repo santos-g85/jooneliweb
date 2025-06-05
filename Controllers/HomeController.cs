@@ -15,7 +15,7 @@ namespace jooneliweb.Controllers
 
         public IActionResult Index()
         {
-            
+           
             return View();
         }
         

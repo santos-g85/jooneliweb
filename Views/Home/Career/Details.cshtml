@@ -1,0 +1,165 @@
+﻿@model jooneliweb.Models.JobOpeningModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>JobOpeningModel</h4>
+
+@* <div> *@
+    
+@*     <hr /> *@
+@*     <dl class="row"> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Id) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Id) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Title) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Title) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Description) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Description) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.LogoUrl) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.LogoUrl) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Department) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Department) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Location) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Location) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Company) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Company) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.SalaryRange) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.SalaryRange) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.EmploymentType) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.EmploymentType) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.PostedAt) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.PostedAt) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.IsActive) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.IsActive) *@
+@*         </dd> *@
+@*     </dl> *@
+@* </div> *@
+@* <div> *@
+@*     <a asp-controller="Home" asp-action="Career">Back to List</a> *@
+@* </div> *@
+
+@* <div class="container my-5"> *@
+@*     <h2 class="text-danger fw-bold mb-3">@Model.Title</h2> *@
+@*     <p class="text-muted mb-1"><strong>Department:</strong> @Model.Department</p> *@
+@*     <p class="text-muted mb-3"><strong>Location:</strong> @Model.Location</p> *@
+
+@*     <div class="mb-4 text-center"> *@
+@*         <img src="@Model.LogoUrl" alt="Company Logo" style="height: 64px; width: 64px;" /> *@
+@*     </div> *@
+
+@*     <p>@Model.Description</p> *@
+
+
+@*     <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#CVUploadModal">Apply Now</button> *@
+@* </div> *@
+
+
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-sm border-0 rounded">
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <img src="@Model.LogoUrl" alt="Company Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+
+                    <h2 class="text-danger fw-bold text-center mb-3">@Model.Title</h2>
+
+                    <p class="text-muted text-center mb-4">
+                        <strong>@Model.Company</strong> · @Model.Department · @Model.Location
+                    </p>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                        <span class="badge bg-danger">@Model.EmploymentType</span>
+                        @if (!string.IsNullOrEmpty(Model.SalaryRange))
+                        {
+                            <span class="badge bg-light text-dark border">
+                                💰 Salary: @Model.SalaryRange
+                            </span>
+                        }
+                        <span class="badge bg-light text-dark border">📅 Posted: @Model.PostedAt.ToString("MMM dd, yyyy")</span>
+                        @if (Model.IsActive)
+                        {
+                            <span class="badge bg-success text-white">Hiring Now</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary text-white">Position Closed</span>
+                        }
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="text-dark fw-semibold">Job Description</h5>
+                        <p class="text-muted">@Model.Description</p>
+                    </div>
+
+                    <div class="text-center">
+                        @if (Model.IsActive)
+                        {
+                            <button class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#CVUploadModal">
+                                Apply Now
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-outline-secondary px-4" disabled>
+                                Applications Closed
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <a asp-controller="Home" asp-action="Career" class="text-decoration-none">
+                    ← Back to Job Listings
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

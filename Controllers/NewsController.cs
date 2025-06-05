@@ -1,10 +1,6 @@
 ﻿using jooneliweb.Models;
 using jooneliweb.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Driver;
-using MongoDB.Driver.GridFS;
-using System.Drawing;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace jooneliweb.Controllers
@@ -128,5 +124,25 @@ namespace jooneliweb.Controllers
                 return View();
             }
         }
+
+        //public async Task<IActionResult> HomeNewsSection()
+        //{
+        //    var news = await _newsCollection.GetAllSortedByDateAsync();
+                
+
+        //    var viewModel = news.Select(n => new NewsViewModel
+        //    {
+        //        Title = n.Title,
+        //        Content = n.Content,
+        //        Category = n.Category,
+        //        IsFeatured = n.IsFeatured,
+        //        CreatedAt = n.CreatedAt,
+        //        Image = n.Image != null
+        //            ? $"data:image/jpeg;base64,{Convert.ToBase64String(n.Image.AsByteArray)}"
+        //            : "/images/default.jpg"
+        //    }).ToList() ?? new List<NewsViewModel>(); //new List<NewsViewModel>() ensure to newsviewmodel is never null
+
+        //    return PartialView("~/Views/Shared/Partials/_NewsHome.cshtml",viewModel);
+        //}
     }
 }

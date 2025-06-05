@@ -1,7 +1,10 @@
 ﻿@model jooneliweb.Models.CVUploadModel
 <!-- Quick Connect Section -->
 <div class="container">
-    <h2 class="text-center fw-bold mb-4" style="font-size: 2.5rem; color:rgb(230,0,0)">Carrer Opportunities at Jooneli</h2>
+    @* <h2 class="text-center fw-bold mb-4" style="font-size: 2.5rem; color:rgb(230,0,0)">Carrer Opportunities at Jooneli</h2> *@
+    <h1 class="text-center fw-bold mb-4 fs-1" style="background: linear-gradient(to right, #f44336, #4caf50); -webkit-background-clip: text; color: transparent;">
+        Carrer Opportunities at Jooneli
+    </h1>
     <p class="text-center mb-4" style="font-size: 1.1rem;">
         Your Chance to Be a Part of Something Bigger
     </p>
@@ -10,7 +13,7 @@
         <div class="row  align-items-center gx-5">
             <!-- Text Content -->
             <div class="col-md-6 order-2 order-md-1">
-                <h1 class="fw-bold text-danger mb-4 display-4">
+                <h1 class="fw-bold mb-4 display-4" style="color:rgb(230,0,0)">
                     Join Our Team.<br class="d-none d-md-block" />
                     <span class="text-dark">Your chance to be a part of Something Bigger.</span>
                 </h1>
@@ -37,16 +40,19 @@
     @* <h2 class="d-flex justify-content-center">Current Openings</h2> *@
     @* <hr /> *@
 
-    <h2 class="text-center mt-5 fw-bold">Current Openings</h2>
-    <hr class="mx-auto" style="width: 80px; border-top: 3px solid #dc3545;" />
+    @* <h2 class="text-center mt-5 fw-bold">Current Openings</h2> *@
+    <h1 class="text-center fw-bold mt-5" style="background: linear-gradient(to right, #f44336, #4caf50); -webkit-background-clip: text; color: transparent;">
+        Current Openings
+    </h1>
+    <hr class="mx-auto" style="width: 80px; border-top: 3px solid ;" />
 
     <div class="d-flex flex-wrap justify-content-center gap-4">
 
         <!-- Opening 1 -->
-        <a asp-controller="Business" asp-action="Multidesk" class="text-decoration-none text-dark">
+       
             <div class="card shadow rounded border-0" style="max-width:300px;">
                 <div class="card-body">
-                    <h5 class="card-title text-danger mb-2">
+                <h5 class="card-title  mb-2">
                         <i class="bi bi-bank me-2"></i> 360 Core Banking System
                     </h5>
                     <p class="text-muted mb-2" style="font-size: 0.9rem;">Department: Development · Location: Kathmandu</p>
@@ -56,24 +62,26 @@
                     <p class="mb-2">Work on mission-critical banking infrastructure with a dedicated and innovative team.</p>
                     <div class="d-flex justify-content-between">
                         <div>
-                            <span class="badge bg-danger text-white">Remote</span>
+                        <span class="badge bg-dark text-white">Remote</span>
                         </div>
                         <div>
-                            <span class="badge bg-danger text-white">Full Time</span>
+                        <span class="badge bg-dark text-white">Full Time</span>
                         </div>
                         <div>
-                            <span class="btn  btn-sm btn-outline-danger">Apply Now</span>
+                            <a asp-controller="Career" asp-action="JobDetails" asp-route-id="360-core-banking">
+                                <span class="btn  btn-sm btn-outline-danger">Apply Now</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </a>
+        
 
         <!-- Opening 2 -->
-        <a asp-controller="Business" asp-action="Multidesk" class="text-decoration-none text-dark">
+       
             <div class="card shadow rounded border-0" style="max-width:300px">
                 <div class="card-body">
-                    <h5 class="card-title text-danger mb-2">
+                <h5 class="card-title mb-2">
                         <i class="bi bi-bank me-2"></i>Trading System
                     </h5>
                     <p class="text-muted mb-2" style="font-size: 0.9rem;">Department: Development · Location: Kathmandu</p>
@@ -83,24 +91,26 @@
                     <p class="mb-2">Work on mission-critical banking infrastructure with a dedicated and innovative team.</p>
                     <div class="d-flex justify-content-between">
                         <div>
-                            <span class="badge bg-danger text-white">Remote</span>
+                        <span class="badge bg-dark text-white">Remote</span>
                         </div>
                         <div>
-                            <span class="badge bg-danger text-white">Full Time</span>
+                        <span class="badge bg-dark text-white">Full Time</span>
                         </div>
                         <div>
-                            <span class="btn  btn-sm btn-outline-danger">Apply Now</span>
+                            <a asp-controller="Career" asp-action="JobDetails" asp-route-id="trading-system">
+                                <span class="btn  btn-sm btn-outline-danger">Apply Now</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </a>
+        
 
         <!-- Opening 3 -->
-        <a asp-controller="Business" asp-action="Multidesk" class="text-decoration-none text-dark">
+       
             <div class="card shadow rounded border-0" style="max-width:300px">
                 <div class="card-body">
-                    <h5 class="card-title text-danger mb-2">
+                <h5 class="card-title  mb-2">
                         <i class="bi bi-laptop me-2"></i> MultipleDesk Support Specialist
                     </h5>
                     <p class="text-muted mb-2" style="font-size: 0.9rem;">Department: Support · Location: Lalitpur</p>
@@ -110,19 +120,20 @@
                     <p class="mb-2">Provide exceptional technical assistance and remote desktop support to enterprise clients.</p>
                     <div class="d-flex justify-content-between">
                         <div>
-                            <span class="badge bg-danger text-white">Remote</span>
+                        <span class="badge bg-dark text-white">Remote</span>
                         </div>
                         <div>
-                            <span class="badge bg-danger text-white">Full Time</span>
+                        <span class="badge bg-dark text-white">Full Time</span>
                         </div>
                         <div>
+                        <a asp-controller="Career" asp-action="JobDetails" asp-route-id="multidesk-support-specialist">
                             <span class="btn  btn-sm btn-outline-danger">Apply Now</span>
+                        </a> 
                         </div>
                     </div>
                 </div>
             </div>
-        </a>
-
+        
     </div>
 
 
